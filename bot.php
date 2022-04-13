@@ -208,7 +208,7 @@ $join = file_get_contents("https://api.telegram.org/bot$token/getChatMember?chat
 if($text == '/start' && $type == 'private' && (strpos($join,'"status":"left"') or strpos($join,'"Bad Request: USER_ID_INVALID"') or strpos($join,'"status":"kicked"'))!== false){
 typing($chat_id, $action = 'typing');
 sleep(2);
-sendMessage($chat_id, $text = $welcome_vmos, $replyMarkup = $join_key)->result->message_id;
+sendMessage($chat_id, $text = $welcome_vmos, $replyMarkup = $join_key);
 return false;}
 
 
