@@ -349,9 +349,12 @@ $in = [[
                 'url'=> "https://core.telegram.org/bots/api",
                 'input_message_content' => [
                 'parse_mode' => 'HTML',
-                'message_text' => "<b>• How to create your first bot? </b><a href='https://telegra.ph/Introduction-to-bot-programming-02-21'>Read this handy tutorial.
-</a>• another article with <a href='https://telegra.ph/Very-first-manual-bot-steps-03-25'>detailed instructions for your very first bot</a>
-<b>• If you are searching for bots:</b> @BotListChat, @BotsArchiveChat
+                'message_text' => "<b>• How to create your first bot?
+</b><a href='https://telegra.ph/Introduction-to-bot-programming-02-21'>Read this handy tutorial.
+</a>• another article with:
+<a href='https://telegra.ph/Very-first-manual-bot-steps-03-25'>detailed instructions for your very first bot</a>
+<b>• If you are searching for bots:
+</b> @BotListChat, @BotsArchiveChat
 
 We can't help you with 3rd party bot creators like ManyBot.
 
@@ -360,14 +363,14 @@ We can't help you with 3rd party bot creators like ManyBot.
                 'reply_markup' => [
                 'inline_keyboard' => [
                         [
-                            ['text' => "Search Again", 'switch_inline_query_current_chat' => "switch"],['text' => "API Bot", 'url' => "https://core.telegram.org/bots/api"]
+                            ['text' => "Search Again", 'switch_inline_query_current_chat' => "bot"],['text' => "API Bot", 'url' => "https://core.telegram.org/bots/api"]
                         ]]]
             ],[
                 'type' => 'article',
                 'id' =>base64_encode(rand(5,555)),
                 'thumb_url'=>"https://telegra.ph/file/aeff14fd95fcb41429a36.jpg",
                 'title' => "Explain",
-                'description'=>"PGT+ app",
+                'description'=>"app",
                 'url'=> "https://www.google.com",
                 'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "hello"],
                 'reply_markup' => [
@@ -377,7 +380,7 @@ We can't help you with 3rd party bot creators like ManyBot.
                         ]]]
             ]];
 
-if($text_inline == "inline"){
+if($text_inline == "bot"){
 answerInlineQuery($inline_query_id, $results = $in, $cache_time = 0, $is_personal = false, $next_offset = '', $switch_pm_text = '', $switch_pm_parameter = '');}
     
 
