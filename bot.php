@@ -351,6 +351,9 @@ $bots = "<b>• How to create your first bot?
 We can't help you with 3rd party bot creators like ManyBot.
 ℹ️ <a href='https://core.telegram.org/bots/api'>Bot API documentation
 </a>";
+$make_bot ="1. Read the <a href='https://t.me/BotTalk/608888'>pinned message</a> to know the requirements you need
+2. If you are not good at programming, you should search on GitHub using the advanced search, as it shows you open source projects in your favorite programming language
+3. OFC YouTube a very good teacher and InfoTeleGroup Channel";
 
 $in = [[
                 'type' => 'article',
@@ -372,15 +375,17 @@ $in = [[
             ],[
                 'type' => 'article',
                 'id' =>base64_encode(rand(5,555)),
-                'thumb_url'=>"https://telegra.ph/file/aeff14fd95fcb41429a36.jpg",
-                'title' => "Explain",
-                'description'=>"app",
-                'url'=> "https://www.google.com",
-                'input_message_content' => ['parse_mode' => 'HTML', 'message_text' => "hello"],
+                'thumb_url'=>"https://telegra.ph/file/0979037ae599e3eeec861.jpg",
+                'title' => "Hoe to Make a bot",
+                'description'=>"Please Read This Article",
+                'url'=> "https://core.telegram.org/bots/api",
+                'input_message_content' => [
+                'parse_mode' => 'HTML',
+                'message_text' =>$make_bot],
                 'reply_markup' => [
                 'inline_keyboard' => [
                         [
-                            ['text' => "ok", 'switch_inline_query_current_chat' => "switch"],['text' => "ok", 'switch_inline_query_current_chat' => "switch"]
+                            ['text' => "Search Again", 'switch_inline_query_current_chat' => "bot"],['text' => "Bot API", 'url' => "https://core.telegram.org/bots/api"]
                         ]]]
             ]];
 
