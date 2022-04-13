@@ -162,9 +162,36 @@ $title = $message->chat->title;
 $mention = "<a href='tg://user?id=$from_id'>$first_name</a>";
 $url_count = json_decode(file_get_contents("https://api.telegram.org/bot$token/getChatMembersCount?chat_id=$chat_id"),true);
 $count_members = $url_count ['result'];
-
 $lang = $message->from->language_code;
 $owner = "1136071279";
+
+
+if($text == "/info" ){
+$get = json_decode(file_get_contents("http://api.telegram.org/bot".API_KEY."/getChatMembersCount?chat_id=$chat_id"));
+$men = $get-> result;
+$title = $message->chat->title;
+$message_id = $update->message->message_id;
+$link = bot("getchat",['chat_id'=>$chat_id])->result->invite_link;
+if($link != null){
+$link = $link;
+$link2 = $link;
+}else{
+$link = bot("exportChatInviteLink",['chat_id'=>$chat_id])->result;
+$link2 = $link;
+}
+bot('sendmessage',[
+'chat_id' => $chat_id,
+'text' => " - اهلا بك عزيزي اليك معلومات المجموعه",
+'reply_to_message_id' =>$message->message_id, 
+'parse_mode'=>"markdown",'disable_web_page_preview'=>true,
+"reply_markup"=> json_encode([
+"inline_keyboard"=>[
+[['text' => 'الاسم' , callback_data => '###'],['text' =>''.$title.'' , callback_data => '###']],
+[['text' => 'عدد الاعضاء' , callback_data => '###'],['text' =>''.$mem.'' , callback_data => '###']],
+[['text' => 'رسائل الكروب' , callback_data => '###'],['text' =>''.$message_id.'' , callback_data => '###']],
+[['text' => 'رابط الكروب' , url => ''.$link.''],['text' =>'المطور' , url => 't.me/motazaldrsy']],
+]])]);}
+
 
 $welcome_vmos = "Welcome $mention Howdy?
 I'm Flaming 🔥 ~& Kitty ッ🥀 Robot please join before asking using me ;)";
@@ -376,11 +403,12 @@ $in = [[
                 'type' => 'article',
                 'id' =>base64_encode(rand(5,555)),
                 'thumb_url'=>"https://telegra.ph/file/0979037ae599e3eeec861.jpg",
-                'title' => "Hoe to Make a bot",
+                'title' => "How to Make a bot",
                 'description'=>"Please Read This Article",
                 'url'=> "https://core.telegram.org/bots/api",
                 'input_message_content' => [
                 'parse_mode' => 'HTML',
+                'disable_web_page_preview' =>true,
                 'message_text' =>$make_bot],
                 'reply_markup' => [
                 'inline_keyboard' => [
