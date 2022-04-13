@@ -349,6 +349,8 @@ $in = [[
                 'url'=> "https://core.telegram.org/bots/api",
                 'input_message_content' => [
                 'parse_mode' => 'HTML',
+                'disable_web_page_preview' =>true,
+                'protect_content'=>true,
                 'message_text' => "<b>• How to create your first bot?
 </b><a href='https://telegra.ph/Introduction-to-bot-programming-02-21'>Read this handy tutorial.
 </a>• another article with:
