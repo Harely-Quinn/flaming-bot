@@ -380,7 +380,7 @@ We can't help you with 3rd party bot creators like ManyBot.
 </a>";
 $make_bot ="1. Read the <a href='https://t.me/BotTalk/608888'>pinned message</a> to know the requirements you need
 2. If you are not good at programming, you should search on GitHub using the advanced search, as it shows you open source projects in your favorite programming language
-3. OFC YouTube a very good teacher and InfoTeleGroup Channel";
+3. OFC YouTube a very good teacher and <a href='https://youtube.com/c/InFoTelChannel'>InFoTel Channel</a>";
 
 $in = [[
                 'type' => 'article',
