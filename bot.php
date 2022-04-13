@@ -14,9 +14,9 @@ $ADMIN = "ID_ADMIN";
 $ADMIN = getenv('ADMIN');
 }
 if (empty(getenv('Channel_ID'))){
-$Channel_ID2 = "Channel_ID";
+$Channel_ID = "Channel_ID";
 } else {
-$Channel_ID2 = getenv('Channel_ID');
+$Channel_ID = getenv('Channel_ID');
 }
 
 define('API_KEY',"$token");
