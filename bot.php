@@ -1,5 +1,7 @@
 <?php
 
+http_response_code(200);
+fastcgi_finish_request();
 
 if (empty(getenv('BOT_TOKEN'))){
 $token = "API_Token";
@@ -12,9 +14,9 @@ $ADMIN = "ID_ADMIN";
 $ADMIN = getenv('ADMIN');
 }
 if (empty(getenv('Channel_ID'))){
-$Channel_ID2 = "Channel_ID2";
+$Channel_ID2 = "Channel_ID";
 } else {
-$Channel_ID2 = getenv('Channel_ID2');
+$Channel_ID2 = getenv('Channel_ID');
 }
 
 define('API_KEY',"$token");
