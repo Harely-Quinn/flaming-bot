@@ -181,7 +181,7 @@ $link2 = $link;
 }
 bot('sendmessage',[
 'chat_id' => $chat_id,
-'text' => "$titl $link"]);}
+'text' => "$title $link2"]);}
 
 
 $welcome_vmos = "Welcome $mention Howdy?
