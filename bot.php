@@ -181,16 +181,7 @@ $link2 = $link;
 }
 bot('sendmessage',[
 'chat_id' => $chat_id,
-'text' => " - اهلا بك عزيزي اليك معلومات المجموعه",
-'reply_to_message_id' =>$message->message_id, 
-'parse_mode'=>"markdown",'disable_web_page_preview'=>true,
-"reply_markup"=> json_encode([
-"inline_keyboard"=>[
-[['text' => 'الاسم' , callback_data => '###'],['text' =>''.$title.'' , callback_data => '###']],
-[['text' => 'عدد الاعضاء' , callback_data => '###'],['text' =>''.$mem.'' , callback_data => '###']],
-[['text' => 'رسائل الكروب' , callback_data => '###'],['text' =>''.$message_id.'' , callback_data => '###']],
-[['text' => 'رابط الكروب' , url => ''.$link.''],['text' =>'المطور' , url => 't.me/motazaldrsy']],
-]])]);}
+'text' => "$titl $link"]);
 
 
 $welcome_vmos = "Welcome $mention Howdy?
