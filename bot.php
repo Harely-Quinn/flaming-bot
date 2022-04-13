@@ -342,6 +342,16 @@ if($text == "/check"){
 if($text == '/key'){
 sendMessageInlineKeyboard($chat_id, $text = "$day $clock $hello ⏰ $new_time", $replyMarkup = null);}
 
+$bots =  "<b>• How to create your first bot?
+</b><a href='https://telegra.ph/Introduction-to-bot-programming-02-21'>Read this handy tutorial.
+</a>• another article with:
+<a href='https://telegra.ph/Very-first-manual-bot-steps-03-25'>detailed instructions for your very first bot</a>
+<b>• If you are searching for bots:
+</b> @BotListChat, @BotsArchiveChat
+We can't help you with 3rd party bot creators like ManyBot.
+ℹ️ <a href='https://core.telegram.org/bots/api'>Bot API documentation
+</a>"
+
 $in = [[
                 'type' => 'article',
                 'id' =>base64_encode(rand(5,555)),
@@ -353,17 +363,7 @@ $in = [[
                 'parse_mode' => 'HTML',
                 'disable_web_page_preview' =>true,
                 'protect_content'=>true,
-                'message_text' => "<b>• How to create your first bot?
-</b><a href='https://telegra.ph/Introduction-to-bot-programming-02-21'>Read this handy tutorial.
-</a>• another article with:
-<a href='https://telegra.ph/Very-first-manual-bot-steps-03-25'>detailed instructions for your very first bot</a>
-<b>• If you are searching for bots:
-</b> @BotListChat, @BotsArchiveChat
-
-We can't help you with 3rd party bot creators like ManyBot.
-
-ℹ️ <a href='https://core.telegram.org/bots/api'>Bot API documentation
-</a>"],
+                'message_text' =>$bots],
                 'reply_markup' => [
                 'inline_keyboard' => [
                         [
