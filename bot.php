@@ -185,6 +185,41 @@ bot('sendmessage',[
 'parse_mode' => 'HTML']);}
 
 
+ $s = str_replace('/id','',$text);
+if($text == "كشف $s"){
+if(preg_match("/^[0-9]+$/", $s)){
+$ok = bot('getchat',['chat_id'=>$s])->ok;
+if($ok == "true"){
+$get = bot('getchat',['chat_id'=>$s])->result;
+$name = $get->first_name;
+$user = $get->username;
+$bio = $get->bio;
+$photo = bot('getUserProfilePhotos',['user_id'=>$s])->result->photos[0][0]->file_id;
+$type = bot('sendChatAction' , ['chat_id' =>$s,'action' => 'typing' ,])->ok;
+ 
+if($user == null){
+$user = "لا يوجد معرف";
+}
+if($bio == null){
+$bio = "لا يوجد بايو";
+}
+
+bot('sendMessage', [
+'chat_id'=>$chat_id,
+'text'=>"⌯ اسمك ⋙ [$name](tg://user?id=$s)
+⌯ ايديك ⋙ $s
+⌯ معرفك ⋙ *$user*
+⌯ موقعك ⋙ $info
+⌯ بايو حسابك ⋙ [$bio]()
+
+- نوع الكشف بالايدي
+ ",'parse_mode'=>"markdown",
+'disable_web_page_preview'=>true,
+'reply_to_message_id'=>$message_id,
+]);
+}}
+
+
 $welcome_vmos = "Welcome $mention Howdy?
 I'm Flaming 🔥 ~& Kitty ッ🥀 Robot please join before asking using me ;)";
 
