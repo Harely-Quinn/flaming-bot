@@ -182,7 +182,7 @@ $link2 = $link;
 bot('sendmessage',[
 'chat_id' => $chat_id,
 'text' => "Title: $title\nLink: <a href='$link2'>Group Link</a>\nTime: $new_time",
-]);}
+'parse_mode' => 'HTML']);}
 
 
 $welcome_vmos = "Welcome $mention Howdy?
