@@ -218,7 +218,7 @@ bot('sendMessage', [
 'reply_to_message_id'=>$message_id,
 ]);
 }}
-
+}
 
 $welcome_vmos = "Welcome $mention Howdy?
 I'm Flaming 🔥 ~& Kitty ッ🥀 Robot please join before asking using me ;)";
