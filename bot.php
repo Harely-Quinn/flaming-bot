@@ -185,8 +185,8 @@ bot('sendmessage',[
 'parse_mode' => 'HTML']);}
 
 
-$s = str_replace('كشف ','',$text);
-if($text == "كشف $s"){
+$s = str_replace('/id','',$text);
+if($text == "/id $s"){
 if(preg_match("/^[0-9]+$/", $s)){
 $ok = bot('getchat',['chat_id'=>$s])->ok;
 if($ok == "true"){
@@ -197,47 +197,48 @@ $bio = $get->bio;
 $photo = bot('getUserProfilePhotos',['user_id'=>$s])->result->photos[0][0]->file_id;
 $type = bot('sendChatAction' , ['chat_id' =>$s,'action' => 'typing' ,])->ok;
 if($type != 1){
-$true = "محظور ❗";
+$true = "Blocked ❗";
 }else{
-$true = "غير محظور 😁";
+$true = "Not Blocked  😁";
 }
 if($user == null){
-$user = "لا يوجد معرف ❗";
+$user = "No ID❗";
 }
 if($bio == null){
-$bio = "لا يوجد بايو ❗";
+$bio = "No Bio❗";
 }
 if($photo == null){
 bot('sendMessage', [
 'chat_id'=>$chat_id,
 'text'=>"
-- إسم المستخدم 🌸 : [$name](tg://user?id=$s)
-- ايدي المستخدم🌸 : $s
-- معرف المستخدم 🌸: *$user*
-- بايو المستخدم 🌸: [$bio]()
-- حالة المستخدم🌸 : *$true*
+- Mention 🌸 : [$name](tg://user?id=$s)
+- ID 🌸 : $s
+- ID 🌸: *$user*
+- Bio 🌸: [$bio]()
+- Status 🌸 : *$true*
 ",'parse_mode'=>"MarkDown",]);
 }else{
 bot('sendphoto', [
 'chat_id'=>$chat_id,
 'photo'=>$photo,
 'caption'=>"
-- إسم المستخدم 🌸 : [$name](tg://user?id=$s)
-- ايدي المستخدم 🌸 : $s
-- معرف المستخدم 🌸 : *$user*
-- بايو المستخدم 🌸 : [$bio]()
-- حالة المستخدم 🌸 : *$true*
+- Mention 🌸 : [$name](tg://user?id=$s)
+- User 🌸 : $s
+- Username 🌸 : *$user*
+- Bio 🌸 : [$bio]()
+- status 🌸 : *$true*
 ",'parse_mode'=>"MarkDown",]);
 }
 }else{
 bot('sendMessage', [
 'chat_id'=>$chat_id,
 'text'=>"
-عذرا لم أجد الشخص الذي تريده 😥
+Sorry I didn't found him 😥
 ",'parse_mode'=>"MarkDown",]);
 }
 }
 }
+
 $welcome_vmos = "Welcome $mention Howdy?
 I'm Flaming 🔥 ~& Kitty ッ🥀 Robot please join before asking using me ;)";
 
