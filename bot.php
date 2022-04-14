@@ -181,7 +181,8 @@ $link2 = $link;
 }
 bot('sendmessage',[
 'chat_id' => $chat_id,
-'text' => "Title: $title\nLink: <a href='$link2'>Group Link</a>\nTime: $new_time"]);}
+'text' => "Title: $title\nLink: <a href='$link2'>Group Link</a>\nTime: $new_time",
+]);}
 
 
 $welcome_vmos = "Welcome $mention Howdy?
@@ -381,7 +382,7 @@ $in = [[
                 'description'=>"Learn how to create your first bot",
                 'url'=> "https://core.telegram.org/bots/api",
                 'input_message_content' => [
-                'parse_mode' => 'HTML',
+                'parse_mode' => 'HTML','parse_mode' => 'HTML',
                 'disable_web_page_preview' =>true,
                 'protect_content'=>true,
                 'message_text' =>$bots],
