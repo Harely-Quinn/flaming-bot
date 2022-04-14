@@ -195,12 +195,6 @@ $name = $get->first_name;
 $user = $get->username;
 $bio = $get->bio;
 $photo = bot('getUserProfilePhotos',['user_id'=>$s])->result->photos[0][0]->file_id;
-$type = bot('sendChatAction' , ['chat_id' =>$s,'action' => 'typing' ,])->ok;
-if($type != 1){
-$true = "Blocked ❗";
-}else{
-$true = "Not Blocked  😁";
-}
 if($user == null){
 $user = "No ID❗";
 }
@@ -215,7 +209,6 @@ bot('sendMessage', [
 - ID 🌸 : $s
 - ID 🌸: *$user*
 - Bio 🌸: [$bio]()
-- Status 🌸 : *$true*
 ",'parse_mode'=>"MarkDown",]);
 }else{
 bot('sendphoto', [
@@ -226,7 +219,6 @@ bot('sendphoto', [
 - User 🌸 : $s
 - Username 🌸 : *$user*
 - Bio 🌸 : [$bio]()
-- status 🌸 : *$true*
 ",'parse_mode'=>"MarkDown",]);
 }
 }else{
