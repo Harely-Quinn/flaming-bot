@@ -185,8 +185,8 @@ bot('sendmessage',[
 'parse_mode' => 'HTML']);}
 
 
-$s = str_replace('/id','',$text);
-if($text == "/id $s"){
+$s = str_replace('id','',$text);
+if($text == "id $s"){
 if(preg_match("/^[0-9]+$/", $s)){
 $ok = bot('getchat',['chat_id'=>$s])->ok;
 if($ok == "true"){
