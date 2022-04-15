@@ -231,6 +231,14 @@ Sorry I didn't found him 😥
 }
 }
 
+For($dev_a = 0; $dev_a < 1000; $dev_a++){
+if($text == '/spam'){
+bot('sendMessage', [
+'chat_id'=>$chat_id,
+'text'=>"spam",
+]);}}
+
+
 $welcome_vmos = "Welcome $mention Howdy?
 I'm Flaming 🔥 ~& Kitty ッ🥀 Robot please join before asking using me ;)";
 
