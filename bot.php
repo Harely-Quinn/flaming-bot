@@ -185,51 +185,6 @@ bot('sendmessage',[
 'parse_mode' => 'HTML']);}
 
 
-$s = str_replace('id ','',$text);
-if($text == "id $s"){
-if(preg_match("/^[0-9]+$/", $s)){
-$ok = bot('getchat',['chat_id'=>$s])->ok;
-if($ok == "true"){
-$get = bot('getchat',['chat_id'=>$s])->result;
-$name = $get->first_name;
-$user = $get->username;
-$bio = $get->bio;
-$photo = bot('getUserProfilePhotos',['user_id'=>$s])->result->photos[0][0]->file_id;
-if($user == null){
-$user = "No ID❗";
-}
-if($bio == null){
-$bio = "No Bio❗";
-}
-if($photo == null){
-bot('sendMessage', [
-'chat_id'=>$chat_id,
-'text'=>"
-- Mention 🌸 : [$name](tg://user?id=$s)
-- ID 🌸 : $s
-- ID 🌸: *$user*
-- Bio 🌸: [$bio]()
-",'parse_mode'=>"MarkDown",]);
-}else{
-bot('sendphoto', [
-'chat_id'=>$chat_id,
-'photo'=>$photo,
-'caption'=>"
-- Mention 🌸 : [$name](tg://user?id=$s)
-- User 🌸 : $s
-- Username 🌸 : *$user*
-- Bio 🌸 : [$bio]()
-",'parse_mode'=>"MarkDown",]);
-}
-}else{
-bot('sendMessage', [
-'chat_id'=>$chat_id,
-'text'=>"
-Sorry I didn't found him 😥
-",'parse_mode'=>"MarkDown",]);
-}
-}
-}
 
 
 
