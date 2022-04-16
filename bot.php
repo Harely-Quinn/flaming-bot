@@ -364,6 +364,19 @@ if($text == "/check"){
 if($text == '/key'){
 sendMessageInlineKeyboard($chat_id, $text = "$day $clock $hello ⏰ $new_time", $replyMarkup = null);}
 
+$bot = "<b>• How to create your first bot?
+</b><a href='https://telegra.ph/Introduction-to-bot-programming-02-21'>Read this handy tutorial.
+</a>• another article with:
+<a href='https://telegra.ph/Very-first-manual-bot-steps-03-25'>detailed instructions for your very first bot</a>
+<b>• If you are searching for bots:
+</b> @BotListChat, @BotsArchiveChat
+We can't help you with 3rd party bot creators like ManyBot.
+ℹ️ <a href='https://core.telegram.org/bots/api'>Bot API documentation
+</a>";
+$make_bot ="1. Read the <a href='https://t.me/BotTalk/608888'>Pinned Message</a> to know the requirements you need
+2. If you are not good at programming, you should search on GitHub using the advanced search, as it shows you open source projects in your favorite programming language
+3. OFC YouTube a very good teacher and <a href='https://youtube.com/c/InFoTelChannel'>InFoTel Channel</a>";
+     
 
 $in = [[
                 'type' => 'article',
@@ -376,7 +389,7 @@ $in = [[
                 'parse_mode' => 'HTML','parse_mode' => 'HTML',
                 'disable_web_page_preview' =>true,
                 'protect_content'=>true,
-                'message_text' =>"Hello"],
+                'message_text' =>$bot],
                 'reply_markup' => [
                 'inline_keyboard' => [
                         [
@@ -392,19 +405,7 @@ $in = [[
                 'input_message_content' => [
                 'parse_mode' => 'HTML',
                 'disable_web_page_preview' =>true,
-                'message_text' =>
-    "<b>• How to create your first bot?
-</b><a href='https://telegra.ph/Introduction-to-bot-programming-02-21'>Read this handy tutorial.
-</a>• another article with:
-<a href='https://telegra.ph/Very-first-manual-bot-steps-03-25'>detailed instructions for your very first bot</a>
-<b>• If you are searching for bots:
-</b> @BotListChat, @BotsArchiveChat
-We can't help you with 3rd party bot creators like ManyBot.
-ℹ️ <a href='https://core.telegram.org/bots/api'>Bot API documentation
-</a>";
-$make_bot ="1. Read the <a href='https://t.me/BotTalk/608888'>pinned message</a> to know the requirements you need
-2. If you are not good at programming, you should search on GitHub using the advanced search, as it shows you open source projects in your favorite programming language
-3. OFC YouTube a very good teacher and <a href='https://youtube.com/c/InFoTelChannel'>InFoTel Channel</a>"],
+                'message_text' =>$make_bot],
                 'reply_markup' => [
                 'inline_keyboard' => [
                         [
