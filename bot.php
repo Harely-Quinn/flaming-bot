@@ -376,7 +376,7 @@ $in = [[
                 'parse_mode' => 'HTML','parse_mode' => 'HTML',
                 'disable_web_page_preview' =>true,
                 'protect_content'=>true,
-                'message_text' =>$os12],
+                'message_text' =>"Hello"],
                 'reply_markup' => [
                 'inline_keyboard' => [
                         [
