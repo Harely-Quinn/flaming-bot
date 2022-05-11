@@ -210,7 +210,7 @@ $welcome_key = json_encode([
            'inline_keyboard'=>[
            [['text'=>'Bots channel 💻','url'=>'https://t.me/botlist'],
            ['text'=>'Bots Menu 📜','url'=>'https://t.me/TGBot_List']],
-           [['text'=>'Add me','url'=>'http://t.me/Flaming_Snowflake_bot?start=start']]]]);
+           [['text'=>'Add me','url'=>'http://t.me/Flaming_Snowflake_bot?startgroup=start']]]]);
 
 $join_key = json_encode([
            'inline_keyboard'=>[
